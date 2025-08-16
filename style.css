@@ -1,0 +1,31 @@
+@font-face {
+	font-family: 'MyFont';
+	src: url('myfont.otf') format('opentype');
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url('bg.gif') no-repeat center center fixed;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.text {
+	font-family: 'MyFont', sans-serif;
+	font-size: 80px;
+	color: white;
+	animation: fontAnim 0.6s steps(1) infinite;
+	/* 0.6s cycle = 5 fps (3 frames per letter) */
+}
+
+/* Animation alternates between A, A_1, A_2 by replacing ligatures */
+@keyframes fontAnim {
+	0%   { font-variant-ligatures: normal; }
+	33%  { font-feature-settings: "liga" 1; }
+	66%  { font-feature-settings: "liga" 1; }
+	100% { font-variant-ligatures: normal; }
+}
