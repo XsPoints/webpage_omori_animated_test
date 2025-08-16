@@ -59,7 +59,7 @@ function animateText() {
   let animated = '';
 
   for (let ch of baseText) {
-    if (/[A-Z]/.test(ch)) {
+    if (/[A-Z0-9]/.test(ch)) {
       if (frame === 0) animated += ch;
       else if (frame === 1) animated += ch + '_1';
       else animated += ch + '_2';
